@@ -15,11 +15,11 @@ const io = new Server(server, {
   },
 });
 
-io.on("connection", () => {
-  console.log(socket.id + "connected");
+io.on("connection", (socket) => {
+  console.log(`USER ${socket.id} CONNECTED`);
 
-  socket.on("disconnected", () => {
-    console.log(socket.id + "disconnected");
+  socket.on("disconnect", () => {
+    console.log(`USER ${socket.id} DISCONNECTED`);
   });
 });
 
